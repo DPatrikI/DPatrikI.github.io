@@ -5,6 +5,7 @@ const routes = [
   "/",
   "/projects/voleq/",
   "/privacy/",
+  "/privacy/signalbriar/",
   "/privacy/voleq/",
   "/support/voleq/",
   "/404.html",
