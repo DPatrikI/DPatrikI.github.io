@@ -22,6 +22,8 @@ const descriptions = new Set();
 const documents = new Map();
 
 const fail = (message) => errors.push(message);
+const startsWithWordCharacter = (value) => /^[\p{L}\p{N}]/u.test(value);
+const endsWithWordCharacter = (value) => /[\p{L}\p{N}]$/u.test(value);
 
 for (const [route, file] of routes) {
   const path = resolve(dist, file);
@@ -83,6 +85,26 @@ for (const [route, file] of routes) {
     fail(`${route}: missing main landmark target`);
   if (!$('a.skip-link[href="#main-content"]').length)
     fail(`${route}: missing skip link`);
+
+  for (const anchor of $("p a, li a").toArray()) {
+    const anchorText = $(anchor).text();
+    const previousText = anchor.prev?.type === "text" ? anchor.prev.data : "";
+    const nextText = anchor.next?.type === "text" ? anchor.next.data : "";
+    const label = $(anchor).attr("href") ?? anchorText;
+
+    if (
+      endsWithWordCharacter(previousText) &&
+      startsWithWordCharacter(anchorText)
+    ) {
+      fail(`${route}: missing space before link ${label}`);
+    }
+    if (
+      endsWithWordCharacter(anchorText) &&
+      startsWithWordCharacter(nextText)
+    ) {
+      fail(`${route}: missing space after link ${label}`);
+    }
+  }
 
   if (
     /localhost|127\.0\.0\.1|\/Users\/|placeholder|sourceMappingURL/i.test(html)
