@@ -10,6 +10,7 @@ const routes = new Map([
   ["/", "index.html"],
   ["/projects/voleq/", "projects/voleq/index.html"],
   ["/privacy/", "privacy/index.html"],
+  ["/privacy/signalbriar/", "privacy/signalbriar/index.html"],
   ["/privacy/voleq/", "privacy/voleq/index.html"],
   ["/support/voleq/", "support/voleq/index.html"],
   ["/404.html", "404.html"],
