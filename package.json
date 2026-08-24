@@ -1,0 +1,38 @@
+{
+  "name": "dpatriki.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run generate:og && astro build",
+    "preview": "node scripts/serve-dist.mjs",
+    "check": "astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "generate:og": "node scripts/generate-og.mjs",
+    "verify:og": "node scripts/generate-og.mjs --check",
+    "verify:site": "node scripts/verify-site.mjs",
+    "test:browser": "playwright test",
+    "verify": "npm run format:check && npm run check && npm run build && npm run verify:og && npm run verify:site && npm run test:browser"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "7.2.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.6",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1",
+    "cheerio": "1.2.0",
+    "lighthouse": "13.4.1",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1",
+    "sharp": "0.35.3",
+    "typescript": "5.9.3"
+  }
+}

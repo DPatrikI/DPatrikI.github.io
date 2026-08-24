@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Patrik Dóczy";
+const description = "Portfolio and public app resources for Patrik Dóczy.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Patrik Dóczy",
+  url: "https://dpatriki.github.io/",
+  email: "mailto:doczy.patrik410@gmail.com",
+  sameAs: [
+    "https://github.com/DPatrikI",
+    "https://www.linkedin.com/in/patrik-istv%C3%A1n-d%C3%B3czy/",
+    "https://x.com/hapci410",
+  ],
+};
+---
+
+<BaseLayout {title} {description} pathname="/" home jsonLd={jsonLd}>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="shell hero-inner">
+      <p class="eyebrow">Portfolio</p>
+      <h1 id="hero-title">Patrik Dóczy</h1>
+      <div class="actions">
+        <a class="button button-primary" href="#projects">View projects</a>
+        <a class="button button-secondary" href="https://github.com/DPatrikI"
+          >View GitHub</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="shell">
+      <p class="eyebrow">Projects</p>
+      <h2 id="projects-title">VolEq</h2>
+      <article class="project-card">
+        <div class="project-copy">
+          <img
+            class="project-mark"
+            src="/assets/voleq/voleq-mark.png"
+            width="432"
+            height="432"
+            alt="VolEq mark"
+          />
+          <p class="eyebrow">Open-source macOS utility</p>
+          <h3>VolEq — Volume Equilibrium</h3>
+          <p>
+            Automatic incoming voice-volume leveling for online meetings,
+            processed locally on your Mac.
+          </p>
+          <a class="button button-primary" href="/projects/voleq/"
+            >Explore VolEq</a
+          >
+        </div>
+        <div class="project-visual">
+          <img
+            src="/assets/voleq/voleq-window.png"
+            width="1224"
+            height="1322"
+            alt="VolEq window showing stopped device-wide capture with speech-aware leveling enabled"
+          />
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="profiles" aria-labelledby="profiles-title">
+    <div class="shell section-grid">
+      <div>
+        <p class="eyebrow">Links</p>
+        <h2 id="profiles-title">Profiles</h2>
+      </div>
+      <div>
+        <ul class="contact-list">
+          <li><a href="https://github.com/DPatrikI">GitHub</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/patrik-istv%C3%A1n-d%C3%B3czy/"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="https://x.com/hapci410">X</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

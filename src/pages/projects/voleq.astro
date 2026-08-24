@@ -1,0 +1,187 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "VolEq — Automatic voice-volume leveling | Patrik Dóczy";
+const description =
+  "VolEq automatically levels incoming voice volume for online meetings with local, speech-aware processing on Apple Silicon Macs.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "VolEq — Volume Equilibrium",
+  description: "Automatic voice-volume leveling for online meetings.",
+  applicationCategory: "MultimediaApplication",
+  operatingSystem: "macOS 14.2 or later on Apple Silicon",
+  image: "https://dpatriki.github.io/assets/voleq/voleq-mark.png",
+  url: "https://dpatriki.github.io/projects/voleq/",
+  codeRepository: "https://github.com/DPatrikI/voleq-community",
+  downloadUrl: "https://github.com/DPatrikI/voleq-community/releases/latest",
+  author: {
+    "@type": "Person",
+    name: "Patrik Dóczy",
+    url: "https://dpatriki.github.io/",
+  },
+};
+---
+
+<BaseLayout
+  {title}
+  {description}
+  pathname="/projects/voleq/"
+  image="/og/voleq.png"
+  imageAlt="VolEq — Automatic voice-volume leveling"
+  jsonLd={jsonLd}
+>
+  <header class="page-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span
+          aria-current="page">VolEq</span
+        >
+      </nav>
+      <p class="eyebrow">Open-source Community edition</p>
+      <h1>VolEq — Volume Equilibrium</h1>
+      <p class="lede">Automatic voice-volume leveling for online meetings.</p>
+      <div class="actions">
+        <a
+          class="button button-primary"
+          href="https://github.com/DPatrikI/voleq-community/releases/latest"
+          >View release notes &amp; download</a
+        >
+        <a
+          class="button button-secondary"
+          href="https://github.com/DPatrikI/voleq-community">View source</a
+        >
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell content-grid">
+      <aside aria-labelledby="requirements-title">
+        <p class="eyebrow">Current release</p>
+        <h2 id="requirements-title">Requirements</h2>
+        <ul class="requirements">
+          <li>Apple Silicon Mac</li>
+          <li>macOS 14.2 or later</li>
+          <li>Community release v0.1.0</li>
+        </ul>
+        <p><a href="/support/voleq/">Installation and support</a></p>
+        <p><a href="/privacy/voleq/">VolEq privacy policy</a></p>
+      </aside>
+
+      <div class="prose">
+        <div
+          class="early-release"
+          role="note"
+          aria-labelledby="early-release-title"
+        >
+          <h2 id="early-release-title">Early release</h2>
+          <p>
+            Read the current release notes and known issues before installation.
+            In v0.1.0, denying System Audio Recording access can incorrectly
+            enter a muting capture path; stop or quit VolEq to restore the
+            original path. The owner has also reproduced a full-system-sleep
+            failure where VolEq appears active but produces no sound; stop and
+            restart it.
+          </p>
+          <p>
+            Fixes described in the repository’s unreleased 0.1.1 source are not
+            shipped or owner-validated release behavior yet.
+          </p>
+        </div>
+
+        <h2>Clearer speech, calmer meetings</h2>
+        <p>
+          VolEq raises quiet speech and controls loud speech while keeping the
+          captured stream’s stereo relationship intact. Its speech-aware path
+          helps prevent music and unrelated sounds from receiving quiet-voice
+          gain and can apply mild noise suppression while speech and background
+          noise are both detected.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Two capture modes</h3>
+            <p>
+              Choose one active application or the complete device-wide output
+              mix.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Local processing</h3>
+            <p>
+              Captured audio is processed locally in memory, without accounts or
+              telemetry.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Speech-aware leveling</h3>
+            <p>
+              Bundled RNNoise states and Apple’s offline SoundAnalysis guide
+              local decisions.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Open source</h3>
+            <p>
+              The complete Community application is available in the public
+              repository.
+            </p>
+          </div>
+        </div>
+
+        <figure class="product-shot">
+          <img
+            src="/assets/voleq/voleq-window.png"
+            width="1224"
+            height="1322"
+            alt="VolEq window showing stopped device-wide capture with speech-aware leveling enabled"
+          />
+          <figcaption>The current VolEq Community window.</figcaption>
+        </figure>
+
+        <h2>Current boundaries</h2>
+        <ul>
+          <li>
+            VolEq processes the combined captured mix. It does not maintain
+            independent per-participant controls or persistent gain profiles.
+          </li>
+          <li>
+            The official current binary supports Apple Silicon only; Intel Macs
+            are not supported.
+          </li>
+          <li>
+            The current application is available only for macOS, even though the
+            longer-term product concept is not restricted to one desktop
+            platform.
+          </li>
+          <li>
+            Only mono or stereo 32-bit floating-point PCM layouts are supported.
+          </li>
+          <li>
+            Only applications currently producing audio appear for application
+            capture.
+          </li>
+          <li>
+            Singing may be classified as speech and receive leveling or mild
+            suppression.
+          </li>
+        </ul>
+
+        <div class="note">
+          <p>
+            Compatibility claims are limited to the public release evidence. The
+            repository keeps automated checks, documented compatibility, and
+            owner-run physical listening evidence distinct.
+          </p>
+          <p>
+            <a
+              href="https://github.com/DPatrikI/voleq-community/blob/master/docs/COMPATIBILITY.md"
+              >Read the tested compatibility matrix</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

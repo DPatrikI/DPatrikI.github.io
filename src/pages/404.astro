@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Page not found | Patrik Dóczy";
+const description =
+  "The requested page could not be found on Patrik Dóczy’s website.";
+---
+
+<BaseLayout {title} {description} pathname="/404.html">
+  <section class="not-found">
+    <div class="shell">
+      <p class="not-found-code" aria-hidden="true">404</p>
+      <p class="eyebrow">Signal not found</p>
+      <h1>That page isn’t here.</h1>
+      <p class="lede">
+        The address may have changed, or the link may be incomplete.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="/">Return home</a>
+        <a class="button button-secondary" href="/projects/voleq/"
+          >Explore VolEq</a
+        >
+        <a class="button button-secondary" href="/#profiles">View profiles</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

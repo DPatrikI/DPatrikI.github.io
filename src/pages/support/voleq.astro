@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "VolEq support | Patrik Dóczy";
+const description =
+  "Installation, troubleshooting, issue reporting, and private support guidance for the current VolEq Community release.";
+---
+
+<BaseLayout {title} {description} pathname="/support/voleq/">
+  <header class="page-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><a
+          href="/projects/voleq/">VolEq</a
+        ><span aria-hidden="true">/</span><span aria-current="page"
+          >Support</span
+        >
+      </nav>
+      <p class="eyebrow">Product help</p>
+      <h1>VolEq support</h1>
+      <p class="lede">
+        Install carefully, check the known issues, and share only what is safe.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell content-grid">
+      <aside aria-labelledby="support-requirements-title">
+        <p class="eyebrow">Current release</p>
+        <h2 id="support-requirements-title">Requirements</h2>
+        <ul class="requirements">
+          <li>Apple Silicon Mac</li>
+          <li>macOS 14.2 or later</li>
+          <li>VolEq Community v0.1.0</li>
+        </ul>
+        <p><a href="/privacy/voleq/">VolEq privacy policy</a></p>
+      </aside>
+
+      <div class="prose">
+        <div class="early-release" role="note">
+          <h2>Read before installing</h2>
+          <p>
+            v0.1.0 has known permission-denial and full-system-sleep defects.
+            Review the latest release page and the current repository
+            documentation before installation.
+          </p>
+        </div>
+
+        <h2>Install</h2>
+        <ol>
+          <li>
+            Open the <a
+              href="https://github.com/DPatrikI/voleq-community/releases/latest"
+              >latest release page</a
+            > and download the Apple Silicon DMG.
+          </li>
+          <li>
+            Open the DMG and drag <strong>VolEq Community</strong> to Applications.
+          </li>
+          <li>Launch the installed application.</li>
+          <li>
+            Start audio in the application you want to level, choose Start, and
+            follow the macOS System Audio Recording prompt.
+          </li>
+        </ol>
+        <p>
+          The published v0.1.0 application is still named <strong
+            >VolEq Community</strong
+          >; the shorter application name belongs to the unreleased 0.1.1
+          source.
+        </p>
+
+        <h2>Troubleshooting</h2>
+        <p>
+          If VolEq is active but you hear no sound, use its <strong
+            >No sound?</strong
+          > help to open Privacy &amp; Security → Screen &amp; System Audio Recording.
+          For the current sleep/wake issue, stop or quit VolEq to restore the original
+          path, then start it again.
+        </p>
+        <p>
+          Prefer the canonical
+          <a
+            href="https://github.com/DPatrikI/voleq-community/blob/master/docs/COMPATIBILITY.md"
+            >compatibility documentation</a
+          > over copied troubleshooting instructions that may drift.
+        </p>
+
+        <h2>Report a reproducible problem</h2>
+        <p>
+          Use <a href="https://github.com/DPatrikI/voleq-community/issues"
+            >GitHub Issues</a
+          > for reproducible bugs and focused feature requests. Include:
+        </p>
+        <ul>
+          <li>VolEq version</li>
+          <li>macOS version</li>
+          <li>Output-device type</li>
+          <li>Application-specific or device-wide capture mode</li>
+          <li>Minimal reproducible steps and the observed result</li>
+        </ul>
+        <p>
+          Do not attach private recordings, credentials, proprietary material,
+          or sensitive logs to a public issue.
+        </p>
+
+        <h2>Security and private support</h2>
+        <p>
+          For vulnerabilities, follow the repository’s
+          <a href="https://github.com/DPatrikI/voleq-community/security/policy"
+            >security-reporting instructions</a
+          >. Do not disclose an audio-exposure, permission, feedback, or
+          system-integrity issue in a public ticket.
+        </p>
+        <p>
+          For support that should not be public, email
+          <a href="mailto:doczy.patrik410@gmail.com"
+            >doczy.patrik410@gmail.com</a
+          >. Exclude sensitive data unless it is necessary and you have
+          considered the risks of sending it by email.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

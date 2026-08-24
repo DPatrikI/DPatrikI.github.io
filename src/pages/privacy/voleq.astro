@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "VolEq privacy policy | Patrik Dóczy";
+const description =
+  "How VolEq processes captured audio locally, uses offline speech analysis, and contacts GitHub only for optional update checks and release pages.";
+---
+
+<BaseLayout {title} {description} pathname="/privacy/voleq/">
+  <header class="page-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><a href="/privacy/"
+          >Privacy</a
+        ><span aria-hidden="true">/</span><span aria-current="page">VolEq</span>
+      </nav>
+      <p class="eyebrow">Product privacy policy</p>
+      <h1>VolEq privacy</h1>
+      <p class="lede">
+        Local audio processing, no accounts, and no usage telemetry.
+      </p>
+      <p class="updated">Last updated: 10 August 2026</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell content-grid">
+      <aside>
+        <p class="eyebrow">VolEq</p>
+        <p><a href="/projects/voleq/">Product overview</a></p>
+        <p><a href="/support/voleq/">Support</a></p>
+        <p><a href="/privacy/">Website privacy</a></p>
+      </aside>
+      <div class="prose">
+        <div class="note">
+          <p>
+            This HTML rendering is provided for convenient public access. The
+            repository policy is authoritative.
+          </p>
+          <p>
+            <a
+              href="https://github.com/DPatrikI/voleq-community/blob/master/PRIVACY.md"
+              >Read the canonical VolEq privacy policy</a
+            >
+          </p>
+        </div>
+
+        <h2>Audio stays local</h2>
+        <p>
+          VolEq processes captured audio locally and in memory. Captured audio
+          is not saved, uploaded, or used for telemetry.
+        </p>
+        <p>
+          When speech-aware leveling is enabled, bundled RNNoise states analyze
+          and mildly denoise speech locally. Turning speech awareness off skips
+          RNNoise and speech analysis entirely. Apple’s offline SoundAnalysis
+          framework supplies the slower speech-versus-music decision. There are
+          no model downloads or online speech-processing services.
+        </p>
+
+        <h2>Permission and audio safety</h2>
+        <p>
+          macOS controls System Audio Recording permission. VolEq explains its
+          local-only audio use before the real processing pipeline causes macOS
+          to present its permission prompt. VolEq does not infer permission from
+          silence or run a separate permission probe.
+        </p>
+        <p>
+          An ordinary Core Audio startup failure leaves VolEq non-running and
+          begins complete graph teardown. If Core Audio refuses to stop or
+          destroy a resource, VolEq retains ownership, requires Quit, and does
+          not claim that the original audio path was restored. The
+          always-visible <strong>No sound?</strong> help repeats the privacy guarantee
+          and opens the relevant System Settings page.
+        </p>
+
+        <h2>Application information</h2>
+        <p>
+          The application selector displays process information that macOS
+          exposes for processes currently producing audio. VolEq does not
+          intentionally persist that process list.
+        </p>
+
+        <h2>Accounts and analytics</h2>
+        <p>
+          VolEq creates no user accounts and includes no analytics. It retains
+          no user dataset that a user could ask Patrik to delete.
+        </p>
+
+        <h2>Optional update checks</h2>
+        <p>
+          When a user chooses <strong>Check for Updates</strong>, or explicitly
+          enables automatic checks, VolEq makes an unauthenticated request to <code
+            >api.github.com</code
+          > for the latest published VolEq Community release. Automatic checks run
+          at most once in a rolling 24-hour period and only while VolEq is running.
+          Opening <strong>View Release</strong> contacts
+          <code>github.com</code>.
+        </p>
+        <p>
+          GitHub receives ordinary network metadata such as an IP address during
+          update checks or when a release page is opened. VolEq sends no
+          captured audio, account identifier, user identifier, or usage
+          telemetry to GitHub. It stores no GitHub response body, cookie, or
+          credential. The setting can be changed in VolEq Settings.
+        </p>
+
+        <h2>Policy changes</h2>
+        <p>
+          The canonical policy must be updated before VolEq adds telemetry,
+          additional networking, persistent recordings, crash reporting, or
+          other data collection.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

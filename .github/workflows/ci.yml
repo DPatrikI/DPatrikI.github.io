@@ -1,0 +1,42 @@
+name: Site verification
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  site-verification:
+    name: Site verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Install exactly from lockfile
+        run: npm ci
+      - name: Verify formatting
+        run: npm run format:check
+      - name: Run Astro and TypeScript checks
+        run: npm run check
+      - name: Build production site
+        run: npm run build
+      - name: Verify deterministic social cards
+        run: npm run verify:og
+      - name: Validate routes, links, metadata, policies, and assets
+        run: npm run verify:site
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser and accessibility tests
+        run: npm run test:browser
+      - name: Audit production dependencies
+        run: npm audit --omit=dev

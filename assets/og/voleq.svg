@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#151919"/>
+  <path d="M0 112h1200M0 518h1200M112 0v630M1088 0v630" stroke="#2b3231" stroke-width="2"/>
+  <text x="112" y="182" fill="#66c9bd" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="4">VOLEQ COMMUNITY</text>
+  <text x="112" y="320" fill="#f2eee4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="78" font-weight="700" letter-spacing="-2">VolEq</text>
+  <text x="112" y="390" fill="#aeb7b4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="36">Automatic voice-volume leveling</text>
+  <g transform="translate(884 205)" fill="#66c9bd">
+    <rect x="0" y="92" width="18" height="56" rx="9" opacity=".42"/>
+    <rect x="42" y="44" width="18" height="152" rx="9" opacity=".62"/>
+    <rect x="84" y="0" width="18" height="240" rx="9"/>
+    <rect x="126" y="58" width="18" height="124" rx="9" opacity=".76"/>
+    <rect x="168" y="102" width="18" height="36" rx="9" opacity=".5"/>
+  </g>
+</svg>
