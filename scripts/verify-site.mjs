@@ -203,11 +203,13 @@ for (const route of routes.keys()) {
   if (!sitemapXml.includes(expected)) fail(`sitemap is missing ${expected}`);
 }
 
-try {
-  await access(resolve(dist, "app-ads.txt"));
-  fail("app-ads.txt must be absent until an authorized record is supplied");
-} catch {
-  // Intentional absence.
+const appAds = await readFile(resolve(dist, "app-ads.txt"), "utf8").catch(
+  () => "",
+);
+const expectedAppAds =
+  "google.com, pub-7127722301061262, DIRECT, f08c47fec0942fa0";
+if (appAds.trim() !== expectedAppAds) {
+  fail("app-ads.txt is missing or does not match the authorized AdMob record");
 }
 
 const allHtml = [...documents.values()].map(($) => $.html()).join("\n");
@@ -220,5 +222,5 @@ if (errors.length) {
 }
 
 console.log(
-  `Verified ${routes.size} routes, metadata, links, assets, policies, and app-ads.txt absence.`,
+  `Verified ${routes.size} routes, metadata, links, assets, policies, and app-ads.txt.`,
 );
