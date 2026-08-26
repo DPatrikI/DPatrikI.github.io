@@ -22,7 +22,7 @@ const description =
         Local progression, optional gameplay analytics, and clear controls for
         advertising privacy.
       </p>
-      <p class="updated">Last updated: 24 August 2026</p>
+      <p class="updated">Last updated: 26 August 2026</p>
     </div>
   </header>
 
@@ -115,10 +115,10 @@ const description =
           If enabled, the data can include a randomly generated analytics
           identifier; app version and platform; run mode and sector; run start
           and settlement; clear or defeat result; active gameplay duration; kill
-          and draft counts; advertising availability and outcomes; Premium offer
-          interactions; and purchase, restoration, or entitlement outcomes.
-          These events are used to understand game balance, reliability,
-          advertising frequency, and Premium conversion.
+          and draft counts; advertising availability and outcomes; Signalkeeper
+          Pack views; and purchase, restoration, or entitlement outcomes. These
+          events are used to understand game balance, reliability, advertising
+          frequency, and Premium conversion.
         </p>
         <p>
           Signalbriar does not send names, email addresses, account identifiers,
@@ -130,12 +130,16 @@ const description =
 
         <h2>Remote configuration</h2>
         <p>
-          If gameplay analytics are enabled, Signalbriar may also contact
-          GameAnalytics to obtain bounded operational settings, such as whether
-          monetisation is enabled and the minimum time between advertisements.
-          Signalbriar does not initialise or contact GameAnalytics before that
-          permission is granted. When permission is declined, dismissed, or
-          withdrawn, the game uses compiled defaults instead.
+          Signalbriar may contact GameAnalytics to obtain bounded operational
+          settings, such as whether monetisation is enabled and the minimum time
+          between advertisements, even when you have not opted in to
+          gameplay-event submission. This Remote Config request can expose basic
+          technical request data that an online service normally receives, such
+          as an IP address, platform, app and SDK version, and network-request
+          metadata. Declining, dismissing, or withdrawing gameplay analytics
+          keeps gameplay-event submission off; it does not disable Remote
+          Config. If a valid setting is unavailable, the game uses its last
+          valid settings or compiled defaults.
         </p>
         <p>
           GameAnalytics processes analytics on Patrik’s behalf. Its current data
