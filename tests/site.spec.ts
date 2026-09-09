@@ -7,6 +7,7 @@ const routes = [
   "/privacy/",
   "/privacy/signalbriar/",
   "/privacy/voleq/",
+  "/privacy/voleq-android/",
   "/support/voleq/",
   "/404.html",
 ];
