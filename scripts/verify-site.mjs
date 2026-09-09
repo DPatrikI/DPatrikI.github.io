@@ -11,6 +11,7 @@ const routes = new Map([
   ["/projects/voleq/", "projects/voleq/index.html"],
   ["/privacy/", "privacy/index.html"],
   ["/privacy/signalbriar/", "privacy/signalbriar/index.html"],
+  ["/privacy/voleq-android/", "privacy/voleq-android/index.html"],
   ["/privacy/voleq/", "privacy/voleq/index.html"],
   ["/support/voleq/", "support/voleq/index.html"],
   ["/404.html", "404.html"],
