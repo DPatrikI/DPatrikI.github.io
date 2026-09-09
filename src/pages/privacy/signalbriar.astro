@@ -22,7 +22,7 @@ const description =
         Local progression, optional gameplay analytics, and clear controls for
         advertising privacy.
       </p>
-      <p class="updated">Last updated: 5 September 2026</p>
+      <p class="updated">Last updated: 9 September 2026</p>
     </div>
   </header>
 
@@ -69,14 +69,13 @@ const description =
 
         <h2>Advertising</h2>
         <p>
-          The iOS 1.0 release requests nonpersonalised ads and disables Google’s
-          publisher first-party identifier used for ad personalisation. Ads are
-          not selected using your cross-app browsing or app-use history.
-          Nonpersonalised ads may still process the information below for
-          delivery, frequency limits, measurement, security, and fraud
+          The iOS and Android 1.0 releases request nonpersonalised ads and
+          disable Google’s publisher first-party identifier used for ad
+          personalisation. Ads are not selected using your cross-app browsing or
+          app-use history. Nonpersonalised ads may still process the information
+          below for delivery, frequency limits, measurement, security, and fraud
           prevention. Google’s applicable consent and opt-out choices continue
-          to apply. Android production advertising is not enabled in this
-          release work.
+          to apply.
         </p>
         <p>
           The free mobile version uses Google AdMob to request and display
@@ -87,6 +86,15 @@ const description =
           identifiers for advertising, measurement, security, and fraud
           prevention. The exact treatment depends on your region, device
           settings, and privacy choices.
+        </p>
+        <p>
+          On Android, Google's advertising SDK may process the Android
+          advertising ID, app set ID, other applicable device or account
+          identifiers, and basic phone-state information. Available identifiers
+          depend on the Android version, device settings, and consent choices.
+          You can reset or delete your advertising ID through Android's privacy
+          settings. Signalbriar does not read an advertising ID to register a
+          test device.
         </p>
         <p>
           Where required, Google’s consent form offers choices for personalised
@@ -123,15 +131,15 @@ const description =
         </p>
         <p>
           If enabled, the data can include a pseudonymous, randomly generated
-          analytics identifier and Apple device-vendor identifier; app version
-          and platform; run mode and sector; run start and settlement; clear or
-          defeat result; active gameplay duration; kill and draft counts;
-          advertising availability and outcomes; Signalkeeper Pack views; and
-          purchase, restoration, or entitlement outcomes. For a newly completed
-          Premium purchase, the event may also include the actual purchase
-          amount and three-letter currency supplied by the app store. These
-          events are used to understand game balance, reliability, advertising
-          frequency, and Premium conversion.
+          analytics identifier and, on iOS only, Apple device-vendor identifier;
+          app version and platform; run mode and sector; run start and
+          settlement; clear or defeat result; active gameplay duration; kill and
+          draft counts; advertising availability and outcomes; Signalkeeper Pack
+          views; and purchase, restoration, or entitlement outcomes. For a newly
+          completed Premium purchase, the event may also include the actual
+          purchase amount and three-letter currency supplied by the app store.
+          These events are used to understand game balance, reliability,
+          advertising frequency, and Premium conversion.
         </p>
         <p>
           Signalbriar does not send names, email addresses, account identifiers,
