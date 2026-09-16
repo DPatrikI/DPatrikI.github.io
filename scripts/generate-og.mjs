@@ -7,6 +7,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const check = process.argv.includes("--check");
 const cards = [
   ["assets/og/patrik-doczy.svg", "public/og/patrik-doczy.png"],
+  ["assets/og/signalbriar.svg", "public/og/signalbriar.png"],
   ["assets/og/voleq.svg", "public/og/voleq.png"],
 ];
 

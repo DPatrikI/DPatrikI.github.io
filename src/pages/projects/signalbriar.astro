@@ -1,0 +1,202 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Signalbriar — One-thumb auto-combat defense | Patrik Dóczy";
+const description =
+  "Signalbriar is a one-thumb auto-combat defense game for iPhone, iPad, and Android: build a living signal network, draft upgrades, and hold four hostile sectors.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Signalbriar",
+  description:
+    "One-thumb auto-combat defense game about growing a living signal network under pressure.",
+  applicationCategory: "GameApplication",
+  operatingSystem: "iOS 15 or later, Android 7.0 or later",
+  image: "https://dpatriki.github.io/assets/signalbriar/signalbriar-mark.png",
+  url: "https://dpatriki.github.io/projects/signalbriar/",
+  sameAs: [
+    "https://apps.apple.com/app/signalbriar/id6805111298",
+    "https://play.google.com/store/apps/details?id=com.patrikistvandoczy.signalbriar",
+  ],
+  author: {
+    "@type": "Person",
+    name: "Patrik Dóczy",
+    url: "https://dpatriki.github.io/",
+  },
+};
+---
+
+<BaseLayout
+  {title}
+  {description}
+  pathname="/projects/signalbriar/"
+  image="/og/signalbriar.png"
+  imageAlt="Signalbriar — One-thumb auto-combat defense game"
+  jsonLd={jsonLd}
+>
+  <header class="page-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><span
+          aria-current="page">Signalbriar</span
+        >
+      </nav>
+      <p class="eyebrow">iOS and Android release</p>
+      <h1>Signalbriar</h1>
+      <p class="lede">
+        Grow a living signal network under pressure in a one-thumb auto-combat
+        defense game.
+      </p>
+      <div class="actions">
+        <a
+          class="button button-primary"
+          href="https://apps.apple.com/app/signalbriar/id6805111298"
+          aria-label="Signalbriar on the App Store">App Store</a
+        >
+        <a
+          class="button button-secondary"
+          href="https://play.google.com/store/apps/details?id=com.patrikistvandoczy.signalbriar"
+          aria-label="Signalbriar on Google Play">Google Play</a
+        >
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell content-grid">
+      <aside aria-labelledby="platforms-title">
+        <p class="eyebrow">Current release</p>
+        <h2 id="platforms-title">Platforms</h2>
+        <ul class="requirements">
+          <li>iPhone and iPad, iOS 15 or later</li>
+          <li>Android 7.0 or later</li>
+          <li>Free, with an optional one-time Premium purchase</li>
+        </ul>
+        <p><a href="/privacy/signalbriar/">Signalbriar privacy policy</a></p>
+        <p>
+          <a href="mailto:doczy.patrik410@gmail.com">Privacy contact</a>
+        </p>
+      </aside>
+
+      <div class="prose">
+        <h2>Defend a network you keep rebuilding</h2>
+        <p>
+          Signalbriar is a one-thumb auto-combat defense game about growing a
+          living network under pressure. Your core fires automatically, and you
+          decide how the network around it evolves: place and connect nodes,
+          absorb loose seeds when survival demands it, and choose one of three
+          upgrades whenever a Signal Draft opens. Combine modules, strengthen
+          your links, and time a Surge protocol to turn a collapsing defense
+          into a comeback.
+        </p>
+        <p>
+          Signal Draft choices are deterministic, so builds can be compared
+          between runs, and the Daily Circuit adds a shared daily challenge
+          alongside the campaign.
+        </p>
+
+        <h2>Four sectors, four bosses</h2>
+        <ul>
+          <li>Glass Verge, guarded by the Fracture Crown</li>
+          <li>Ember Relay, controlled by the Forge Warden</li>
+          <li>Null Orchard, home of the Null Bloom</li>
+          <li>Crown Lattice, domain of the Lattice Sovereign</li>
+        </ul>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>One-thumb play</h3>
+            <p>
+              Your core attacks on its own, so placing nodes and timing a Surge
+              protocol carry the run.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>A network you build in combat</h3>
+            <p>
+              Place and connect nodes while enemies are already moving, and
+              absorb loose seeds when a wave starts to overwhelm the links.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Modules and Surge protocols</h3>
+            <p>
+              Six modules and four Surge protocols shape how each sector plays
+              out and which synergies are worth drafting.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Comfort options</h3>
+            <p>
+              High contrast, reduced motion, large text, and separate audio
+              controls are available from the settings.
+            </p>
+          </div>
+        </div>
+
+        <figure class="product-shot product-shot-portrait">
+          <img
+            src="/assets/signalbriar/signalbriar-gameplay.png"
+            width="720"
+            height="1280"
+            alt="Signalbriar combat: the player's core surrounded by incoming crystal enemies, with the wave timer, upgrade meter, module controls, and integrity bar visible"
+          />
+          <figcaption>
+            A wave in the first sector, with the wave timer, upgrade meter, and
+            integrity bar visible.
+          </figcaption>
+        </figure>
+
+        <h2>Progression between runs</h2>
+        <p>
+          Every run feeds permanent Foundry progression. Unlock new routes,
+          improve your starting options, and return to the same sector with a
+          different strategy.
+        </p>
+
+        <h2>Premium</h2>
+        <p>
+          The free release is supported by interstitial advertising. Signalbriar
+          Premium is an optional one-time purchase that removes interstitial ads
+          and unlocks the Signalkeeper cosmetic core, trail, frame, and badge.
+          Premium does not change combat power or progression.
+        </p>
+
+        <div class="note">
+          <p>
+            The free release shows interstitial ads from Google AdMob, with
+            regional consent choices and a Privacy Options control inside the
+            game. Optional gameplay analytics are off by default and can be
+            changed in the settings at any time.
+          </p>
+          <p>
+            <a href="/privacy/signalbriar/"
+              >Read the Signalbriar privacy policy</a
+            >
+          </p>
+        </div>
+
+        <h2>Current boundaries</h2>
+        <ul>
+          <li>
+            Signalbriar is a general-audience game and is not directed to
+            children.
+          </li>
+          <li>
+            Progress, settings, and earned cosmetics are stored locally on your
+            device, and the game does not require an account.
+          </li>
+          <li>
+            Purchases and restorations are handled by the App Store or Google
+            Play; Signalbriar receives only the entitlement information needed
+            to grant Premium.
+          </li>
+          <li>
+            Performance, store availability, and store pricing can differ
+            between iPhone, iPad, and Android devices.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

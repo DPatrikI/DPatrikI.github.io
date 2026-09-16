@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#151919"/>
+  <path d="M0 112h1200M0 518h1200M112 0v630M1088 0v630" stroke="#2b3231" stroke-width="2"/>
+  <text x="112" y="182" fill="#66c9bd" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="700" letter-spacing="4">SIGNALBRIAR</text>
+  <text x="112" y="320" fill="#f2eee4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="78" font-weight="700" letter-spacing="-2">Signalbriar</text>
+  <text x="112" y="390" fill="#aeb7b4" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="36">One-thumb auto-combat defense</text>
+  <g transform="translate(872 195)" fill="none" stroke="#66c9bd" stroke-linecap="round" stroke-width="6">
+    <path d="M120 120L42 48M120 120L198 48M120 120v86"/>
+    <circle cx="42" cy="48" r="12"/>
+    <circle cx="198" cy="48" r="12"/>
+    <circle cx="120" cy="206" r="12"/>
+    <circle cx="120" cy="120" r="22" fill="#66c9bd" stroke="none"/>
+  </g>
+</svg>
