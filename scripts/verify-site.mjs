@@ -8,6 +8,7 @@ const dist = resolve(root, "dist");
 const origin = "https://dpatriki.github.io";
 const routes = new Map([
   ["/", "index.html"],
+  ["/projects/signalbriar/", "projects/signalbriar/index.html"],
   ["/projects/voleq/", "projects/voleq/index.html"],
   ["/privacy/", "privacy/index.html"],
   ["/privacy/signalbriar/", "privacy/signalbriar/index.html"],
@@ -116,7 +117,13 @@ for (const [route, file] of routes) {
   }
 }
 
-for (const route of ["/", "/projects/voleq/"]) {
+const structuredData = new Map([
+  ["/", "Person"],
+  ["/projects/signalbriar/", "SoftwareApplication"],
+  ["/projects/voleq/", "SoftwareApplication"],
+]);
+
+for (const [route, expectedType] of structuredData) {
   const $ = documents.get(route);
   const raw = $?.('script[type="application/ld+json"]').text();
   if (!raw) {
@@ -125,7 +132,6 @@ for (const route of ["/", "/projects/voleq/"]) {
   }
   try {
     const value = JSON.parse(raw);
-    const expectedType = route === "/" ? "Person" : "SoftwareApplication";
     if (value["@type"] !== expectedType)
       fail(`${route}: JSON-LD must be ${expectedType}`);
     if ("offers" in value || "aggregateRating" in value)

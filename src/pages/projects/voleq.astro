@@ -10,7 +10,7 @@ const jsonLd = {
   name: "VolEq — Volume Equilibrium",
   description: "Automatic voice-volume leveling for online meetings.",
   applicationCategory: "MultimediaApplication",
-  operatingSystem: "macOS 14.2 or later on Apple Silicon",
+  operatingSystem: "macOS 14.2 or later on Apple Silicon, Android 9.0 or later",
   image: "https://dpatriki.github.io/assets/voleq/voleq-mark.png",
   url: "https://dpatriki.github.io/projects/voleq/",
   codeRepository: "https://github.com/DPatrikI/voleq-community",
@@ -38,7 +38,7 @@ const jsonLd = {
           aria-current="page">VolEq</span
         >
       </nav>
-      <p class="eyebrow">Open-source Community edition</p>
+      <p class="eyebrow">macOS Community edition</p>
       <h1>VolEq — Volume Equilibrium</h1>
       <p class="lede">Automatic voice-volume leveling for online meetings.</p>
       <div class="actions">
@@ -46,6 +46,11 @@ const jsonLd = {
           class="button button-primary"
           href="https://github.com/DPatrikI/voleq-community/releases/latest"
           >View release notes &amp; download</a
+        >
+        <a
+          class="button button-secondary"
+          href="https://play.google.com/store/apps/details?id=com.veryclevernamecompany.voleq"
+          aria-label="VolEq on Google Play">Google Play</a
         >
         <a
           class="button button-secondary"
@@ -59,7 +64,7 @@ const jsonLd = {
     <div class="shell content-grid">
       <aside aria-labelledby="requirements-title">
         <p class="eyebrow">Current release</p>
-        <h2 id="requirements-title">Requirements</h2>
+        <h2 id="requirements-title">macOS requirements</h2>
         <ul class="requirements">
           <li>Apple Silicon Mac</li>
           <li>macOS 14.2 or later</li>
@@ -67,6 +72,22 @@ const jsonLd = {
         </ul>
         <p><a href="/support/voleq/">Installation and support</a></p>
         <p><a href="/privacy/voleq/">VolEq privacy policy</a></p>
+
+        <p class="eyebrow">Android release</p>
+        <ul class="requirements">
+          <li>Android 9.0 or later</li>
+          <li>Free with rewarded access</li>
+          <li>Premium: one-time purchase, no ads</li>
+        </ul>
+        <p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.veryclevernamecompany.voleq"
+            >VolEq on Google Play</a
+          >
+        </p>
+        <p>
+          <a href="/privacy/voleq-android/">Android privacy policy</a>
+        </p>
       </aside>
 
       <div class="prose">
@@ -75,14 +96,14 @@ const jsonLd = {
           role="note"
           aria-labelledby="early-release-title"
         >
-          <h2 id="early-release-title">Early release</h2>
+          <h2 id="early-release-title">macOS Community early release</h2>
           <p>
-            Read the current release notes and known issues before installation.
-            In v0.1.0, denying System Audio Recording access can incorrectly
-            enter a muting capture path; stop or quit VolEq to restore the
-            original path. The owner has also reproduced a full-system-sleep
-            failure where VolEq appears active but produces no sound; stop and
-            restart it.
+            Read the current macOS Community release notes and known issues
+            before installation. In v0.1.0, denying System Audio Recording
+            access can incorrectly enter a muting capture path; stop or quit
+            VolEq to restore the original path. The owner has also reproduced a
+            full-system-sleep failure where VolEq appears active but produces no
+            sound; stop and restart it.
           </p>
           <p>
             Fixes described in the repository’s unreleased 0.1.1 source are not
@@ -140,6 +161,43 @@ const jsonLd = {
           <figcaption>The current VolEq Community window.</figcaption>
         </figure>
 
+        <h2>VolEq for Android</h2>
+        <p>
+          VolEq is also published on Google Play as a separate Android release.
+          It levels playback volume locally on the device, without recording
+          your microphone, and keeps the preset-based controls along with a stop
+          control in the notification shade.
+        </p>
+        <p>
+          Android’s system-wide capture depends on the device and the player in
+          use. Where the platform allows it, the Android release processes the
+          full playback session; when a device or player does not expose that
+          path, it falls back to a restricted compatible-player mode.
+        </p>
+        <ul>
+          <li>
+            Free on Google Play with opt-in rewarded access: completing a
+            rewarded ad adds 24 hours of leveling.
+          </li>
+          <li>
+            VolEq Premium is a separate one-time purchase listing that runs
+            without ads or a time limit.
+          </li>
+          <li>
+            Android 9.0 or later, maintained separately from the macOS Community
+            edition.
+          </li>
+        </ul>
+        <p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.veryclevernamecompany.voleq"
+            >Open the free VolEq listing on Google Play</a
+          >
+        </p>
+        <p>
+          <a href="/privacy/voleq-android/">Read the Android privacy policy</a>
+        </p>
+
         <h2>Current boundaries</h2>
         <ul>
           <li>
@@ -151,9 +209,9 @@ const jsonLd = {
             are not supported.
           </li>
           <li>
-            The current application is available only for macOS, even though the
-            longer-term product concept is not restricted to one desktop
-            platform.
+            VolEq for macOS and VolEq for Android are separate applications with
+            different feature sets and release cadences. Nothing on this page
+            claims feature parity between them.
           </li>
           <li>
             Only mono or stereo 32-bit floating-point PCM layouts are supported.

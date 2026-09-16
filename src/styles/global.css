@@ -300,6 +300,10 @@ nav a {
   background: var(--surface);
 }
 
+.project-card + .project-card {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 .project-copy {
   display: flex;
   flex-direction: column;
@@ -512,6 +516,16 @@ nav a {
 
 .product-shot img {
   width: min(100%, 52rem);
+  margin-inline: auto;
+}
+
+.product-shot-portrait img {
+  width: auto;
+  max-height: 44rem;
+}
+
+.product-shot-portrait {
+  width: fit-content;
   margin-inline: auto;
 }
 

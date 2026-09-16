@@ -1,6 +1,6 @@
 # Patrik Dóczy — personal website
 
-Static portfolio and policy site for [Patrik Dóczy](https://github.com/DPatrikI), published at <https://dpatriki.github.io/>. The first release features the open-source VolEq Community project.
+Static portfolio and policy site for [Patrik Dóczy](https://github.com/DPatrikI), published at <https://dpatriki.github.io/>. The site presents the released projects — the open-source VolEq Community edition for macOS, the VolEq release for Android, and the Signalbriar game for iOS and Android — with their store links and privacy policies.
 
 ## Requirements
 
