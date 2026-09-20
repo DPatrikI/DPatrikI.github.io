@@ -14,15 +14,16 @@ const routes = [
   "/404.html",
 ];
 
-const storeLinks = {
+const externalLinks = {
   voleqPlay:
     "https://play.google.com/store/apps/details?id=com.veryclevernamecompany.voleq",
+  voleqRepository: "https://github.com/DPatrikI/voleq-community",
   signalbriarAppStore: "https://apps.apple.com/app/signalbriar/id6805111298",
   signalbriarPlay:
     "https://play.google.com/store/apps/details?id=com.patrikistvandoczy.signalbriar",
 };
 
-const expectStoreLink = async (page: Page, href: string) => {
+const expectLink = async (page: Page, href: string) => {
   expect(await page.locator(`a[href="${href}"]`).count()).toBeGreaterThan(0);
 };
 
@@ -133,23 +134,39 @@ test("home page links both released projects and their stores", async ({
   await expect(
     projects.locator('a[href="/projects/signalbriar/"]'),
   ).toHaveCount(1);
-  await expectStoreLink(page, storeLinks.voleqPlay);
-  await expectStoreLink(page, storeLinks.signalbriarAppStore);
-  await expectStoreLink(page, storeLinks.signalbriarPlay);
+  await expectLink(page, externalLinks.voleqPlay);
+  await expectLink(page, externalLinks.voleqRepository);
+  await expectLink(page, externalLinks.signalbriarAppStore);
+  await expectLink(page, externalLinks.signalbriarPlay);
 });
 
 test("VolEq page links its Android release", async ({ page }) => {
   await page.goto("/projects/voleq/");
-  await expectStoreLink(page, storeLinks.voleqPlay);
+  await expectLink(page, externalLinks.voleqPlay);
   await expect(
     page.getByRole("heading", { name: "VolEq for Android" }),
   ).toBeVisible();
 });
 
+test("VolEq names its macOS repository on the card and the project page", async ({
+  page,
+}) => {
+  for (const route of ["/", "/projects/voleq/"]) {
+    await page.goto(route);
+    await expectLink(page, externalLinks.voleqRepository);
+    await expect(
+      page.getByRole("link", {
+        name: "VolEq macOS repository (open source) on GitHub",
+      }),
+    ).toBeVisible();
+  }
+  await expect(page.getByText("View source")).toHaveCount(0);
+});
+
 test("Signalbriar page links both stores", async ({ page }) => {
   await page.goto("/projects/signalbriar/");
-  await expectStoreLink(page, storeLinks.signalbriarAppStore);
-  await expectStoreLink(page, storeLinks.signalbriarPlay);
+  await expectLink(page, externalLinks.signalbriarAppStore);
+  await expectLink(page, externalLinks.signalbriarPlay);
 });
 
 test("reduced motion keeps the experience complete", async ({ page }) => {
