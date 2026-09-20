@@ -21,7 +21,7 @@
     "verify": "npm run format:check && npm run check && npm run build && npm run verify:og && npm run verify:site && npm run test:browser"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/sitemap": "3.7.4",
     "astro": "7.2.8"
   },
   "devDependencies": {
